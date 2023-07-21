@@ -1,4 +1,5 @@
 document.getElementById("calculate-btn").addEventListener("click", calculateArbitrage);
+document.getElementById("dark-mode-toggle").addEventListener("click", toggleDarkMode);
 
 function calculateArbitrage() {
     const odds1 = parseFloat(document.getElementById("odds-1").value);
@@ -25,4 +26,14 @@ function calculateArbitrage() {
     `;
 
     document.getElementById("result").innerHTML = resultText;
+}
+
+// Check if the user has a dark mode preference
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark-mode');
+}
+
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
 }

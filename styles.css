@@ -18,10 +18,11 @@ body {
 
 .container {
     background-color: #f5f5f5;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 350px;
+    position: relative; /* For positioning the dark mode toggle */
 }
 
 h1 {
@@ -40,6 +41,7 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 14px;
+    color: #141414;
 }
 
 input {
@@ -49,6 +51,8 @@ input {
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.2s;
+    background-color: #f9f9f9;
+    color: #141414;
 }
 
 input:focus {
@@ -59,7 +63,7 @@ button {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #7c7c7c;
+    background-color: #000; /* Button color set to black */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -70,7 +74,7 @@ button {
 }
 
 button:hover {
-    background-color: #666666;
+    background-color: #222; /* Darker shade for button hover effect */
     transform: scale(1.05);
 }
 
@@ -85,6 +89,11 @@ button:hover {
     animation: fadeIn 0.5s ease forwards;
 }
 
+#result.dark-mode {
+    border-color: #f5f5f5;
+    color: #f5f5f5; /* Set text color to white in dark mode */
+}
+
 @keyframes fadeIn {
     to {
         opacity: 1;
@@ -92,9 +101,64 @@ button:hover {
 }
 
 .green-text {
-    color: #008000;
+    color: #00c853;
+}
+
+.green-text.dark-mode {
+    color: #00c853; /* Set text color to green in dark mode */
 }
 
 .red-text {
-    color: #FF0000;
+    color: #e53935;
+}
+
+.red-text.dark-mode {
+    color: #e53935; /* Set text color to red in dark mode */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+}
+
+.dark-mode .container {
+    background-color: #2b2b2b;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode label {
+    color: #f5f5f5;
+}
+
+.dark-mode input {
+    background-color: #2b2b2b;
+    border-color: #f5f5f5;
+    color: #f5f5f5;
+}
+
+.dark-mode button {
+    background-color: #000; /* Button color set to black in dark mode */
+}
+
+.dark-mode #result {
+    border-color: #f5f5f5;
+    color: #f5f5f5; /* Set text color to white in dark mode */
+}
+
+.dark-mode h1 {
+    color: #f5f5f5;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #9f66ff; /* Color for the moon icon in dark mode */
+}
+
+.dark-mode-toggle.dark-mode {
+    color: #f5f5f5; /* Color for the moon icon in light mode */
 }
